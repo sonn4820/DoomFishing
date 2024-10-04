@@ -1134,12 +1134,12 @@ bool PushCapsuleOutOfPlane3D(Capsule3& capsule, Plane3 const& plane, bool fixLen
 		if (dotEnd >= 0)
 		{
 			alt1 = plane.GetAltitudeOfPoint(capsule.m_end);
-			alt1 = fabs(alt1);
+			alt1 = fabsf(alt1);
 		}
 		if (dotStart >= 0)
 		{
 			alt2 = plane.GetAltitudeOfPoint(capsule.m_start);
-			alt2 = fabs(alt2);
+			alt2 = fabsf(alt2);
 		}
 		alt = (alt1 > alt2) ? alt1 : alt2;
 
