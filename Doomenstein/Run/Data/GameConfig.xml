@@ -1,0 +1,14 @@
+<GameConfig
+	defaultMap="TestMap"
+	musicVolume="0.1"
+	sfxVolume="1.0"
+	mainMenuMusic="Data/Audio/Music/menuMusic.mp3"
+	gameMusic="Data/Audio/Music/gameMusic.mp3"
+	buttonClickSound="Data/Audio/Click.mp3"
+	title="Data/Images/doomChilling.png"
+	windowAspect="2.0"
+/>
+<!--
+	defaultMap="MPMap"
+ -->
+
