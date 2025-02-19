@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{548a8f28-1bab-43a9-b99a-20a9ddfcce6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Game System">
+      <UniqueIdentifier>{d5dc1590-be54-408e-ad30-645e77a30f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Misc">
+      <UniqueIdentifier>{fbf456cb-8dca-4f02-8c1a-b8b066ebbc48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{c2bc74b0-aac9-4044-a9e1-19d676bc4c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Map">
+      <UniqueIdentifier>{d0db3945-dbc6-4d98-bc2b-ca8663ab5baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Controller">
+      <UniqueIdentifier>{00db8aaa-c65e-4f87-aad8-bab095910ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Object">
+      <UniqueIdentifier>{748106cf-7f9c-4026-9270-dfd1b4ee2585}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main_Windows.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Gameplay\Game System</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCommon.cpp">
+      <Filter>Gameplay\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Gameplay\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Gameplay\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Gameplay\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="AIController.cpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Gameplay\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="FishAIController.cpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.hpp">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Gameplay\Game System</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCommon.hpp">
+      <Filter>Gameplay\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.hpp">
+      <Filter>Gameplay\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.hpp">
+      <Filter>Gameplay\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.hpp">
+      <Filter>Gameplay\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.hpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.hpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="AIController.hpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.hpp">
+      <Filter>Gameplay\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="FishAIController.hpp">
+      <Filter>Gameplay\Controller</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\Run\Data\GameConfig.xml">
+      <Filter>XML</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Definitions\MapDefinitions.xml">
+      <Filter>XML</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Definitions\TileDefinitions.xml">
+      <Filter>XML</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Definitions\ActorDefinitions.xml">
+      <Filter>XML</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Definitions\ProjectileActorDefinitions.xml">
+      <Filter>XML</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Definitions\WeaponDefinitions.xml">
+      <Filter>XML</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

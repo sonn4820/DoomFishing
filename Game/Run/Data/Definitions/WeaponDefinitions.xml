@@ -1,0 +1,59 @@
+<Definitions>
+	<!-- Pistol -->
+	<WeaponDefinition name="Pistol" price="800" magPrice="100" magazine="15" refireTime="0.75" moveSpeed="1.0" gunSmoke="true" smokeRadius="0.0125" smokeSpeed="30.0" smokeOffset="0.2, 0.0 ,-0.15" smokeTexture="Data/Images/flash.png" rayCount="1" rayCone="0.0" rayRange="40.0" rayDamage="10.0~15.0" rayImpulse="4.0">
+		<HUD shader="Data/Shaders/Default" baseTexture="Data/Images/Hud_Base.png" reticleTexture="Data/Images/Reticle.png" reticleSize="16,16" spriteSize="256,256" spritePivot="0.5,0.0">
+			<Animation name="Idle" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Pistol.png" cellCount="5,1" secondsPerFrame="0.1" startFrame="0" endFrame="0"/>
+			<Animation name="Attack" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Pistol.png" cellCount="5,1" secondsPerFrame="0.1" startFrame="1" endFrame="3" />
+		</HUD>
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/pew.mp3"/>
+		</Sounds>
+	</WeaponDefinition>
+	<!-- Plasma Rifle -->
+	<WeaponDefinition name="PlasmaRifle" price="1500" magPrice="300" magazine="50" refireTime="0.1" moveSpeed="0.7" projectileCount="1" projectileActor="PlasmaProjectile" projectileCone="4.0" projectileSpeed="8.0">
+		<HUD shader="Data/Shaders/Default" baseTexture="Data/Images/Hud_Base.png" reticleTexture="Data/Images/Reticle.png" reticleSize="16,16" spriteSize="256,256" spritePivot="0.5,0.0">
+			<Animation name="Idle" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Plasma.png" cellCount="4,1" secondsPerFrame="0.125" startFrame="0" endFrame="0" />
+			<Animation name="Attack" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Plasma.png" cellCount="4,1" secondsPerFrame="0.125" startFrame="1" endFrame="2" />
+		</HUD>
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/pow.mp3"/>
+		</Sounds>
+	</WeaponDefinition>
+	<!-- Demon Melee -->
+	<WeaponDefinition name="DemonMelee"  refireTime="2.0" meleeCount="1" meleeArc="180.0" meleeRange="0.75" meleeDamage="2.0~4.0" meleeImpulse="2.0">
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/bonk.mp3"/>
+		</Sounds>
+	</WeaponDefinition>
+	<!-- Sniper -->
+	<WeaponDefinition name="Sniper" price="4600" magPrice="800" magazine="5" refireTime="2.00" moveSpeed="0.5" canScope="true" gunSmoke="true" isFlash="false" smokeRadius="0.020" smokeSpeed="3.5f" smokeOffset="0.7,-0.1,-0.1" smokeTexture="Data/Images/smoke.png" scopeTexture="Data/Images/scope.png" rayCount="1" rayCone="0.0" rayRange="150.0" rayDamage="100.0~120.0" rayImpulse="30.0">
+		<HUD shader="Data/Shaders/Default" baseTexture="Data/Images/Hud_Base.png" reticleTexture="Data/Images/Reticle.png" reticleSize="0,0" spriteSize="600,250" spritePivot="0.2,0.0">
+			<Animation name="Idle" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Sniper.png" cellCount="3,6" secondsPerFrame="0.1" startFrame="0" endFrame="0"/>
+			<Animation name="Attack" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_Sniper.png" cellCount="3,6" secondsPerFrame="0.11" startFrame="1" endFrame="16" />
+		</HUD>
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/bigpew.mp3"/>
+		</Sounds>
+	</WeaponDefinition>
+	<!-- AK -->
+	<WeaponDefinition name="AK" price="2700" magPrice="500" magazine="30" refireTime="0.15" moveSpeed="0.9" gunSmoke="true" smokeRadius="0.008" smokeSpeed="50.0" smokeOffset="0.2, -0.05 ,-0.05" smokeTexture="Data/Images/flash.png" rayCount="1" rayCone="2.0" rayRange="80.0" rayDamage="20.0~25.0" rayImpulse="8.0">
+		<HUD shader="Data/Shaders/Default" baseTexture="Data/Images/Hud_Base.png" reticleTexture="Data/Images/Reticle.png" reticleSize="16,16" spriteSize="256,256" spritePivot="0.0,0.03">
+			<Animation name="Idle" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_AK.png" cellCount="4,3" secondsPerFrame="0.1" startFrame="0" endFrame="0"/>
+			<Animation name="Attack" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_AK.png" cellCount="4,3" secondsPerFrame="0.1" startFrame="1" endFrame="2" />
+			<Animation name="Reload" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_AK.png" cellCount="4,3" secondsPerFrame="0.06" startFrame="4" endFrame="11" playbackMode="PingPong"/>
+		</HUD>
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/ratata.mp3" override="false"/>
+		</Sounds>
+	</WeaponDefinition>
+	<!-- FishingRod -->
+	<WeaponDefinition name="FishingRod" price="1000" magPrice="0" magazine="-1" refireTime="1.0" moveSpeed="1.0" smokeOffset="0.1,-0.07, -0.1">
+		<HUD shader="Data/Shaders/Default" baseTexture="Data/Images/Hud_Base.png" reticleTexture="Data/Images/CircleReticle.png" reticleSize="16,16" spriteSize="600,600" spritePivot="0.2,0.0">
+			<Animation name="Idle" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_FishingRod.png" cellCount="5,2" secondsPerFrame="0.1" startFrame="0" endFrame="0"/>
+			<Animation name="Attack" shader="Data/Shaders/Default" spriteSheet="Data/Images/Weapon_FishingRod.png" cellCount="5,2" secondsPerFrame="0.1" startFrame="1" endFrame="9" />
+		</HUD>
+		<Sounds>
+			<Sound sound="Fire" name="Data/Audio/throwBait.mp3"/>
+		</Sounds>
+	</WeaponDefinition>
+</Definitions>

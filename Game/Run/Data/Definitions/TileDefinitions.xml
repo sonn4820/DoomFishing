@@ -1,0 +1,77 @@
+<Definitions>
+	<TileDefinition name="StoneFloor" isSolid="false" mapImagePixelColor="0,0,0" floorSpriteCoords="4,3" ceilingSpriteCoords="3,3"/>
+	<TileDefinition name="WoodFloor" isSolid="false" mapImagePixelColor="48,48,48" floorSpriteCoords="0,6" ceilingSpriteCoords="2,6"/>
+	<TileDefinition name="SpaceDecoSteelBox1" isSolid="true" mapImagePixelColor="250,250,0" wallSpriteCoords="5,1"/>
+	<TileDefinition name="SpaceDecoSteelBox2" isSolid="true" mapImagePixelColor="249,249,0" wallSpriteCoords="3,2"/>
+	<TileDefinition name="SpaceDecoCaution" isSolid="true" mapImagePixelColor="165,165,165" wallSpriteCoords="5,3"/>
+	<TileDefinition name="InvisibleWall" isSolid="true" mapImagePixelColor="255,255,255" wallSpriteCoords="7,7"/>
+	<TileDefinition name="SpaceWall1" isSolid="true" mapImagePixelColor="200,200,200" wallSpriteCoords="2,2"/>
+	<TileDefinition name="SpaceWall2" isSolid="true" mapImagePixelColor="180,180,180" wallSpriteCoords="7,3"/>
+	<TileDefinition name="SpaceWall3" isSolid="true" mapImagePixelColor="150,150,150" wallSpriteCoords="6,3"/>
+	<TileDefinition name="WoodWall" isSolid="true" mapImagePixelColor="143,136,82" wallSpriteCoords="1,6"/>
+	<TileDefinition name="OpenGrass" isSolid="false" mapImagePixelColor="0,128,0" floorSpriteCoords="2,1" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenMoonSurface" isSolid="false" mapImagePixelColor="25,25,25" floorSpriteCoords="0,3" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSand" isSolid="false" mapImagePixelColor="255,255,0" floorSpriteCoords="2,4" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandLightBlend" isSolid="false" mapImagePixelColor="200,200,0" floorSpriteCoords="3,4" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenSandBlendMoonNorth" isSolid="false" mapImagePixelColor="200,200,2" floorSpriteCoords="4,4" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonEast" isSolid="false" mapImagePixelColor="200,200,4" floorSpriteCoords="5,4" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonSouth" isSolid="false" mapImagePixelColor="200,200,8" floorSpriteCoords="6,4" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonWest" isSolid="false" mapImagePixelColor="200,200,16" floorSpriteCoords="7,4" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenSandBlendMoonNorthEast" isSolid="false" mapImagePixelColor="200,200,6" floorSpriteCoords="4,5" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonSouthEast" isSolid="false" mapImagePixelColor="200,200,12" floorSpriteCoords="5,5" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonSouthWest" isSolid="false" mapImagePixelColor="200,200,24" floorSpriteCoords="7,5" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonNorthWest" isSolid="false" mapImagePixelColor="200,200,18" floorSpriteCoords="6,5" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenSandBlendMoonNorthEastCorner" isSolid="false" mapImagePixelColor="150,150,6" floorSpriteCoords="4,6" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonSouthEastCorner" isSolid="false" mapImagePixelColor="150,150,12" floorSpriteCoords="5,6" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonSouthWestCorner" isSolid="false" mapImagePixelColor="150,150,24" floorSpriteCoords="7,6" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenSandBlendMoonNorthWestCorner" isSolid="false" mapImagePixelColor="150,150,18" floorSpriteCoords="6,6" ceilingSpriteCoords="7,7"/>
+
+
+	<TileDefinition name="SpaceFloor" isSolid="false" mapImagePixelColor="100,50,50" floorSpriteCoords="4,3" ceilingSpriteCoords="2,3"/>
+
+	<TileDefinition name="OpenBush" isSolid="false" isRenderOffset="true" renderOffset="0.0001" hasSideFaces="true" mapImagePixelColor="170,0,255" wallSpriteCoords="4,1" floorSpriteCoords="3,1" ceilingSpriteCoords="7,7" isRenderLit="false"/>
+
+	<TileDefinition name="SpaceGateEast" isSolid="false" isRenderOffset="true" renderOffset="0.0001" hasSideFaces="true" mapImagePixelColor="250,104,255" hasNorthFace="false" hasWestFace="false" hasSouthFace="false" wallSpriteCoords="3,5" floorSpriteCoords="2,6" ceilingSpriteCoords="2,3" isRenderLit="false"/>
+	<TileDefinition name="SpaceGateNorth" isSolid="false" isRenderOffset="true" renderOffset="0.0001" hasSideFaces="true" mapImagePixelColor="250,102,255" hasEastFace="false" hasWestFace="false" hasSouthFace="false" wallSpriteCoords="3,5" floorSpriteCoords="2,5" ceilingSpriteCoords="2,3" isRenderLit="false"/>
+
+	<TileDefinition name="BuyStation" isSolid="false" isRenderOffset="true" renderOffset="0.2" hasSideFaces="true" mapImagePixelColor="150,220,255" wallSpriteCoords="1,4" floorSpriteCoords="0,4" ceilingSpriteCoords="7,7" isRenderLit="false"/>
+	<TileDefinition name="BuyStationInDoor" isSolid="false" isRenderOffset="true" renderOffset="0.2" hasSideFaces="true" mapImagePixelColor="150,230,255" wallSpriteCoords="1,4" floorSpriteCoords="3,3" ceilingSpriteCoords="2,3" isRenderLit="false"/>
+
+	<TileDefinition name="OpenBridgeVertical" isSolid="false" isBridge="true" mapImagePixelColor="255,100,0" hasSideFaces="true" hasNorthFace="false" hasSouthFace="false" floorSpriteCoords="5,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7"/>
+	<TileDefinition name="OpenBridgeVerticalEndNorth" isSolid="false" isBridge="true" mapImagePixelColor="255,100,2" hasSideFaces="true" bridgeNorthEnd="true"  hasNorthFace="false" hasSouthFace="false" floorSpriteCoords="5,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeVerticalEndSouth" isSolid="false" isBridge="true" mapImagePixelColor="255,100,8" hasSideFaces="true" bridgeSouthEnd="true"  hasNorthFace="false" hasSouthFace="false" floorSpriteCoords="5,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeVerticalEndNorthEast" isSolid="false" isBridge="true" mapImagePixelColor="255,100,6" hasSideFaces="true" bridgeNorthEnd="true" bridgeEastEnd="true"   hasNorthFace="false" hasSouthFace="false" floorSpriteCoords="5,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeVerticalEndSouthWest" isSolid="false" isBridge="true" mapImagePixelColor="255,100,24" hasSideFaces="true" bridgeSouthEnd="true" bridgeWestEnd="true"  hasNorthFace="false" hasSouthFace="false" floorSpriteCoords="5,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+
+	<TileDefinition name="OpenBridgeHorizontal" isSolid="false" isBridge="true" mapImagePixelColor="255,170,0" hasSideFaces="true" hasEastFace="false" hasWestFace="false" floorSpriteCoords="6,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7"/>
+	<TileDefinition name="OpenBridgeHorizontalEndEast" isSolid="false" isBridge="true" mapImagePixelColor="255,170,4" hasSideFaces="true" bridgeEastEnd="true" hasEastFace="false" hasWestFace="false" floorSpriteCoords="6,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeHorizontalEndWest" isSolid="false" isBridge="true" mapImagePixelColor="255,170,16" hasSideFaces="true" bridgeWestEnd="true" hasEastFace="false" hasWestFace="false" floorSpriteCoords="6,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeHorizontalEndSouthWest" isSolid="false" isBridge="true" mapImagePixelColor="255,170,24" hasSideFaces="true" bridgeWestEnd="true"  bridgeSouthEnd="true" hasEastFace="false" hasWestFace="false" floorSpriteCoords="6,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+	<TileDefinition name="OpenBridgeHorizontalEndNorthEast" isSolid="false" isBridge="true" mapImagePixelColor="255,170,6" hasSideFaces="true" bridgeEastEnd="true"  bridgeNorthEnd="true" hasEastFace="false" hasWestFace="false" floorSpriteCoords="6,2" ceilingSpriteCoords="7,7" wallSpriteCoords="1,5" waterBridgeSpriteCoords="4,7" waterGroundSpriteCoords="1,7"/>
+
+
+	<TileDefinition name="OpenRiverNoGround" isSolid="false" isWater="true" mapImagePixelColor="170,170,255" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverFullGround" isSolid="false" isWater="true" hasSideFaces="true" mapImagePixelColor="0,100,255" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenRiverGroundEast"	isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" hasNorthFace="false" hasSouthFace="false" mapImagePixelColor="4,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundWest"	isSolid="false" isWater="true" hasSideFaces="true" hasEastFace="false" hasNorthFace="false" hasSouthFace="false" mapImagePixelColor="16,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundSouth" isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" hasEastFace="false"  hasNorthFace="false" mapImagePixelColor="8,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNorth" isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" hasEastFace="false"  hasSouthFace="false" mapImagePixelColor="2,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenRiverGroundSouthWest" isSolid="false" isWater="true" hasSideFaces="true" hasEastFace="false" hasNorthFace="false" mapImagePixelColor="24,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNorthEast" isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" hasSouthFace="false" mapImagePixelColor="6,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNorthWest" isSolid="false" isWater="true" hasSideFaces="true" hasEastFace="false" hasSouthFace="false" mapImagePixelColor="18,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundSouthEast" isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" hasNorthFace="false" mapImagePixelColor="12,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenRiverGroundNoEast" isSolid="false" isWater="true" hasSideFaces="true" hasEastFace="false" mapImagePixelColor="26,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNoWest" isSolid="false" isWater="true" hasSideFaces="true" hasWestFace="false" mapImagePixelColor="14,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNoSouth" isSolid="false" isWater="true" hasSideFaces="true" hasSouthFace="false" mapImagePixelColor="22,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="OpenRiverGroundNoNorth" isSolid="false" isWater="true" hasSideFaces="true" hasNorthFace="false" mapImagePixelColor="28,0,200" wallSpriteCoords="1,7" floorSpriteCoords="4,7" ceilingSpriteCoords="7,7"/>
+
+	<TileDefinition name="OpenBridge" isSolid="false" mapImagePixelColor="127,127,127" floorSpriteCoords="6,1" ceilingSpriteCoords="7,7"/>
+	<TileDefinition name="BrigdeWall" isSolid="true" mapImagePixelColor="60,60,60" wallSpriteCoords="7,1"/>
+</Definitions>
