@@ -307,7 +307,7 @@ DoubleQuaternion DoubleQuaternion::SLerp(DoubleQuaternion q1, DoubleQuaternion q
 {
 	DoubleQuaternion result;
 
-	double dot = q1.DotProduct(q2);
+	double dot = q1.Dot(q2);
 	if (abs(dot) >= 1.0)
 	{
 		return q1;
@@ -367,7 +367,7 @@ bool DoubleQuaternion::Equal(DoubleQuaternion const& q, double tolerance)
 	return iEqual && jEqual && kEqual && wEqual;
 }
 
-double DoubleQuaternion::DotProduct(DoubleQuaternion const& q) const
+double DoubleQuaternion::Dot(DoubleQuaternion const& q) const
 {
 	return (i * q.i) + (j * q.j) + (k * q.k) + (w * q.w);
 }

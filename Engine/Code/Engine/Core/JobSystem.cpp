@@ -71,13 +71,18 @@ void JobSystem::CreateWorkers(int num)
 
 void JobSystem::DestroyWorkers()
 {
-	for (size_t i = 0; i < m_workers.size(); i++)
+	for (auto & worker : m_workers)
 	{
-		delete m_workers[i];
-		m_workers[i] = nullptr;
+		delete worker;
+		worker = nullptr;
 	}
 
 	m_workers.clear();
+}
+
+size_t JobSystem::GetWorkersSize() const
+{
+	return m_workers.size();
 }
 
 void JobSystem::QueueJob(Job* jobToQueue)
@@ -193,17 +198,17 @@ void JobSystem::ClearAllJobs()
 	m_executingJobsMutex.lock();
 	m_completedJobsMutex.lock();
 
-	for (size_t i = 0; i < m_queuedJobs.size(); i++)
+	for (auto & queuedJob : m_queuedJobs)
 	{
-		delete m_queuedJobs[i];
+		delete queuedJob;
 	}
-	for (size_t i = 0; i < m_executingJobs.size(); i++)
+	for (auto & executingJob : m_executingJobs)
 	{
-		delete m_executingJobs[i];
+		delete executingJob;
 	}
-	for (size_t i = 0; i < m_completedJobs.size(); i++)
+	for (auto & completedJob : m_completedJobs)
 	{
-		delete m_completedJobs[i];
+		delete completedJob;
 	}
 
 	m_queuedJobs.clear();
@@ -219,11 +224,11 @@ void JobSystem::SetWorkerThreadJobFlags(unsigned int bitflags, int num)
 {
 	int tracker = num;
 
-	for (size_t i = 0; i < m_workers.size(); i++)
+	for (auto & worker : m_workers)
 	{
-		if (m_workers[i]->m_jobTypeBitflags == 1)
+		if (worker->m_jobTypeBitflags == 1)
 		{
-			m_workers[i]->m_jobTypeBitflags = bitflags;
+			worker->m_jobTypeBitflags = bitflags;
 			tracker--;
 			if (tracker <= 0)
 			{

@@ -202,7 +202,7 @@ bool InputSystem::Event_KeyPressed(EventArgs& args)
 	{
 		return false;
 	}
-	unsigned char keyCode = (unsigned char)args.GetValue("KeyCode", -1);
+	unsigned char keyCode = args.GetValue<unsigned char>("KeyCode", 0);
 	g_theInput->HandleKeyPressed(keyCode);
 	return true;
 }
@@ -212,14 +212,14 @@ bool InputSystem::Event_KeyReleased(EventArgs& args)
 	{
 		return false;
 	}
-	unsigned char keyCode = (unsigned char)args.GetValue("KeyCode", -1);
+	unsigned char keyCode = args.GetValue<unsigned char>("KeyCode", 0);
 	g_theInput->HandleKeyReleased(keyCode);
 	return true;
 }
 
 bool InputSystem::Event_MouseScroll(EventArgs& args)
 {
-	g_theInput->m_mouseScrollValue = (int)args.GetValue("MouseWheel", 0);
+	g_theInput->m_mouseScrollValue = args.GetValue<int>("MouseWheel", 0);
 	return true;
 }
 

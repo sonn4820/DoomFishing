@@ -1,9 +1,14 @@
 #pragma once
-#include <vector>
 #include <deque>
-#include <mutex>
-#include <atomic>
 #include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
+#include <functional>
+#include <vector>
+#include <atomic>
+#include <future>
+#include <type_traits> 
 
 enum class JobState
 {
@@ -61,6 +66,7 @@ public:
 
 	void CreateWorkers(int num);
 	void DestroyWorkers();
+	size_t GetWorkersSize() const;
 	void QueueJob(Job* jobToQueue);
 	Job* ClaimJob(JobWorker* worker);
 	void CompleteJob(Job* jobToComplete);

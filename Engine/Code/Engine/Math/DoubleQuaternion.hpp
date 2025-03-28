@@ -25,7 +25,7 @@ public:
 	void						ToAngleAxis(double& out_angleRadian, DoubleVec3& out_axis) const;
 
 	bool						Equal(DoubleQuaternion const& q, double tolerance = 0.005f);
-	double						DotProduct(DoubleQuaternion const& q) const;
+	double						Dot(DoubleQuaternion const& q) const;
 	double						GetAngle();
 	DoubleVec3					Rotate(const DoubleVec3& v) const;
 

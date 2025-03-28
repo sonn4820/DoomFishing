@@ -40,6 +40,11 @@ float SinDegrees(float degrees)
 	return sinf(ConvertDegreesToRadians(degrees));
 }
 
+float TanDegrees(float degrees)
+{
+	return tanf(ConvertDegreesToRadians(degrees));
+}
+
 float Atan2Degrees(float y, float x)
 {
 	return ConvertRadiansToDegrees(atan2f(y, x));
@@ -117,40 +122,27 @@ float GetNormalizedAngle(float angle)
 
 float GetDistance2D(Vec2 const& positionA, Vec2 const& positionB)
 {
-	float x = positionB.x - positionA.x;
-	float y = positionB.y - positionA.y;
-	return sqrtf((x * x) + (y * y));
+	return (positionB - positionA).GetLength();
 }
 //..............................
 float GetDistanceSquared2D(Vec2 const& positionA, Vec2 const& positionB)
 {
-	float x = positionB.x - positionA.x;
-	float y = positionB.y - positionA.y;
-	return (x * x) + (y * y);
+	return (positionB - positionA).GetLengthSquared();
 }
 //..............................
 float GetDistance3D(Vec3 const& positionA, Vec3 const& positionB)
 {
-	float x = positionB.x - positionA.x;
-	float y = positionB.y - positionA.y;
-	float z = positionB.z - positionA.z;
-	return sqrtf((x * x) + (y * y) + (z * z));
+	return (positionB - positionA).GetLength();
 }
 //..............................
 float GetDistanceSquared3D(Vec3 const& positionA, Vec3 const& positionB)
 {
-	float x = positionB.x - positionA.x;
-	float y = positionB.y - positionA.y;
-	float z = positionB.z - positionA.z;
-	return (x * x) + (y * y) + (z * z);
+	return (positionB - positionA).GetLengthSquared();
 }
 
 double GetDistanceSquared3D_Double(DoubleVec3 const& positionA, DoubleVec3 const& positionB)
 {
-	double x = positionB.x - positionA.x;
-	double y = positionB.y - positionA.y;
-	double z = positionB.z - positionA.z;
-	return (x * x) + (y * y) + (z * z);
+	return (positionB - positionA).GetLengthSquared();
 }
 
 //..............................
@@ -158,14 +150,14 @@ float GetDistanceXY3D(Vec3 const& positionA, Vec3 const& positionB)
 {
 	float x = positionB.x - positionA.x;
 	float y = positionB.y - positionA.y;
-	return sqrtf((x * x) + (y * y));
+	return Vec2(x,y).GetLength();
 }
 //..............................
 float GetDistanceXYSquared3D(Vec3 const& positionA, Vec3 const& positionB)
 {
 	float x = positionB.x - positionA.x;
 	float y = positionB.y - positionA.y;
-	return (x * x) + (y * y);
+	return  Vec2(x, y).GetLengthSquared();
 }
 //..............................
 int GetTaxicabDistance2D(IntVec2 const& pointA, IntVec2 const& pointB)
@@ -183,7 +175,7 @@ float GetProjectedLength2D(Vec2 const& vectorToProject, Vec2 const& vectorToProj
 Vec2 const GetProjectedOnto2D(Vec2 const& vectorToProject, Vec2 const& vectorToProjectOnto)
 {
 	Vec2 normalizedVectorToProjectOnto = vectorToProjectOnto.GetNormalized();
-	float projectedLength = DotProduct2D(vectorToProject, vectorToProjectOnto);
+	float projectedLength = DotProduct2D(vectorToProject, normalizedVectorToProjectOnto);
 	Vec2 projectedVector = normalizedVectorToProjectOnto * projectedLength;
 	return projectedVector;
 }
@@ -263,9 +255,7 @@ bool IsPointInsidePolygon2D(Vec2 const& point, std::vector<Vec2> polygon)
 
 	for (size_t i = 0, j = n - 1; i < n; j = i++)
 	{
-		if (((polygon[i].y > point.y) != (polygon[j].y > point.y)) &&
-			(point.x < (polygon[j].x - polygon[i].x) * (point.y - polygon[i].y) /
-				(polygon[j].y - polygon[i].y) + polygon[i].x))
+		if (((polygon[i].y > point.y) != (polygon[j].y > point.y)) && (point.x < (polygon[j].x - polygon[i].x) * (point.y - polygon[i].y) / (polygon[j].y - polygon[i].y) + polygon[i].x))
 		{
 			inside = !inside;
 		}
@@ -323,9 +313,22 @@ bool IsPointInsideDirectedSector2D(Vec2 const& point, Vec2 const& sectorTip, Vec
 
 bool DoDiscsOverlap2D(Vec2 const& centerA, float radiusA, Vec2 const& centerB, float radiusB)
 {
-	float distanceSquaredTwoCenters = GetDistanceSquared2D(centerA, centerB);
+	float distanceSquaredTwoCenters = (centerB - centerA).GetLengthSquared();
 	return distanceSquaredTwoCenters < (radiusA + radiusB) * (radiusA + radiusB);
 }
+
+bool DoDiscOverlapAABB2D(Vec2 const& center, float radius, AABB2 const& box)
+{
+	Vec2 nearestPointonAABB = box.GetNearestPoint(center);
+	return IsPointInsideDisc2D(nearestPointonAABB, center, radius);
+}
+
+bool DoDiscOverlapCapsule2D(Vec2 const& center, float radius, Capsule2 const& capsule)
+{
+	Vec2 nearestPoint = GetNearestPointOnLineSegment2D(center, capsule.m_start, capsule.m_end);
+	return DoDiscsOverlap2D(center, radius, nearestPoint, capsule.m_radius);
+}
+
 bool DoAABBsOverlap3D(AABB3 const& boxA, AABB3 const& boxB)
 {
 	if (boxA.m_maxs.x <= boxB.m_mins.x || boxA.m_mins.x >= boxB.m_maxs.x)
@@ -2592,6 +2595,14 @@ Vec2 Clamp(Vec2 value, Vec2 minValue, Vec2 maxValue)
 	result.x = Clamp(value.x, minValue.x, maxValue.x);
 	result.y = Clamp(value.y, minValue.y, maxValue.y);
 
+	return result;
+}
+
+int Clamp(int value, int minValue, int maxValue)
+{
+	int result = value;
+	if (value < minValue) result = minValue;
+	if (value > maxValue) result = maxValue;
 	return result;
 }
 

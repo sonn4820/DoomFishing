@@ -28,6 +28,12 @@ void Capsule2::FixLength()
 	m_end -= GetAxis() * 0.5f * diff;
 }
 
+Vec2 Capsule2::GetCenter()
+{
+	Vec2 axis = m_end - m_start;
+	return m_start + axis.GetNormalized() * axis.GetLength() * 0.5f;
+}
+
 Vec2 Capsule2::GetAxis() const
 {
 	return m_end - m_start;

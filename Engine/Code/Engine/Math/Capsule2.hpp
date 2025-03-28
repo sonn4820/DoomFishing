@@ -16,6 +16,7 @@ public:
 	explicit Capsule2(Vec2 start, Vec2 end, float radius);
 
 	void FixLength();
+	Vec2 GetCenter();
 	Vec2 GetAxis() const;
 	float GetBoneLength() const;
 

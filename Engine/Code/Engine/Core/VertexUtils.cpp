@@ -2335,8 +2335,8 @@ void AddVertsForSkyBox(std::vector<Vertex_PCU>& verts, const AABB3& bounds, cons
 	Vec3 point6(bounds.m_mins.x, bounds.m_maxs.y, bounds.m_mins.z);
 	Vec3 point7(bounds.m_mins.x, bounds.m_mins.y, bounds.m_mins.z);
 	Vec3 point8(bounds.m_maxs.x, bounds.m_mins.y, bounds.m_mins.z);
-	Vec2 offset((bounds.m_maxs.x - bounds.m_mins.x) * 0.00001f, (bounds.m_maxs.y - bounds.m_mins.y) * 0.00001f);
-	AddVertsForQuad3D(verts, point2, point1, point3, point4, color, AABB2(Vec2(0.25f, 2.f / 3.f) + offset, Vec2(0.5f, 1.f) - offset));
+	Vec2 offset = Vec2::ZERO; //((bounds.m_maxs.x - bounds.m_mins.x) * 0.00001f, (bounds.m_maxs.y - bounds.m_mins.y) * 0.00001f);
+	AddVertsForQuad3D(verts, point2, point1, point3, point4, color, AABB2(Vec2(0.25f, 2.f / 3.f) + offset, Vec2(0.5f, 1.f) - offset));// +z
 	AddVertsForQuad3D(verts, point7, point8, point6, point5, color, AABB2(Vec2(0.25f, 0.f) + offset, Vec2(0.5f, 1.f / 3.f) - offset));//-z
 	AddVertsForQuad3D(verts, point6, point5, point2, point1, color, AABB2(Vec2(0.25f, 1.f / 3.f) + offset, Vec2(0.5f, 2.f / 3.f) - offset));//y
 	AddVertsForQuad3D(verts, point8, point7, point4, point3, color, AABB2(Vec2(0.75f, 1.f / 3.f) + offset, Vec2(1.f, 2.f / 3.f) - offset));//-y

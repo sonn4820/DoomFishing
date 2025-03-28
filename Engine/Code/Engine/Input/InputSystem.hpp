@@ -3,8 +3,7 @@
 #include "Engine/Input/XboxController.hpp"
 #include "Engine/Input/KeyButtonState.hpp"
 #include "Engine/Core/NamedStrings.hpp"
-
-typedef NamedStrings EventArgs;
+#include "Engine/Core/EventSystem.hpp"
 
 extern unsigned char const KEYCODE_F1;
 extern unsigned char const KEYCODE_F2;

@@ -61,7 +61,7 @@ void Text::Render() const
 
 	m_canvas->GetSystemRenderer()->SetRasterizerMode(RasterizerMode::SOLID_CULL_NONE);
 	m_canvas->GetSystemRenderer()->SetBlendMode(BlendMode::ALPHA);
-	
+
 	m_canvas->GetSystemRenderer()->SetModelConstants(Mat44::CreateTranslation2D(m_position), m_textSetting.m_color);
 
 	m_canvas->GetSystemRenderer()->BindTexture(&m_canvas->GetSystemFont()->GetTexture());
@@ -105,7 +105,8 @@ void Text::SetPosition(Vec2 pos)
 void Text::SetTextSetting(TextSetting textSetting)
 {
 	m_textSetting = textSetting;
-	m_canvas->GetSystemFont()->AddVertsForText2D(m_textVerts, Vec2(), m_textSetting.m_height, m_textSetting.m_text, m_textSetting.m_color, m_textSetting.m_aspect, m_textSetting.m_lineOffset, m_textSetting.m_alignment.x);
+	float width = m_canvas->GetSystemFont()->GetTextWidth(m_textSetting.m_height, m_textSetting.m_text, m_textSetting.m_aspect);
+	m_canvas->GetSystemFont()->AddVertsForText2D(m_textVerts, Vec2(-width * 0.5f, -m_textSetting.m_height * 0.5f), m_textSetting.m_height, m_textSetting.m_text, m_textSetting.m_color, m_textSetting.m_aspect, m_textSetting.m_lineOffset, m_textSetting.m_alignment.x);
 	//RotateText(m_textSetting.m_orientation);
 }
 

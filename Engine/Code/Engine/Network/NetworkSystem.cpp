@@ -47,7 +47,7 @@ void NetWorkSystem::Startup()
 	else if (m_mode == NetMode::SERVER)
 	{
 		m_mode = NetMode::SERVER;
-		CreateAndBindServerSocket();;
+		CreateAndBindServerSocket();
 	}
 
 	SubscribeEventCallbackFunction("BurstTest", NetWorkSystem::BurstTest);
@@ -232,12 +232,11 @@ void NetWorkSystem::Send(std::string data)
 
 bool NetWorkSystem::RemoteCommand(EventArgs& args)
 {
-	std::string line = args.GetValue("command", "");
+	std::string line = args.GetValue<std::string>("command", "");
 	Strings totalCommands = SplitStringWithQuotes(line, ' ');
 	for (auto & cmd : totalCommands)
 	{
 		TrimString(cmd,'\"');
-		ToLower(cmd);
 		g_theNetwork->Send(Stringf(cmd.c_str()));
 	}
 

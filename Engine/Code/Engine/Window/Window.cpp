@@ -31,7 +31,7 @@ LRESULT CALLBACK WindowsMessageHandlingProcedure(HWND windowHandle, UINT wmMessa
 	case WM_CHAR:
 	{
 		EventArgs args;
-		args.SetValue("KeyCode", Stringf("%d", (unsigned char)wParam));
+		args.SetValue("KeyCode", (unsigned char)wParam);
 		FireEvent("CharInput", args);
 		return 0;
 	}
@@ -46,7 +46,7 @@ LRESULT CALLBACK WindowsMessageHandlingProcedure(HWND windowHandle, UINT wmMessa
 	case WM_KEYDOWN:
 	{
 		EventArgs args;
-		args.SetValue("KeyCode", Stringf("%d", (unsigned char)wParam));
+		args.SetValue("KeyCode", (unsigned char)wParam);
 		FireEvent("KeyPressed", args);
 		return 0;
 	}
@@ -55,7 +55,7 @@ LRESULT CALLBACK WindowsMessageHandlingProcedure(HWND windowHandle, UINT wmMessa
 	case WM_KEYUP:
 	{
 		EventArgs args;
-		args.SetValue("KeyCode", Stringf("%d", (unsigned char)wParam));
+		args.SetValue("KeyCode", (unsigned char)wParam);
 		FireEvent("KeyReleased", args);
 		return 0;
 	}
@@ -123,7 +123,7 @@ LRESULT CALLBACK WindowsMessageHandlingProcedure(HWND windowHandle, UINT wmMessa
 		if (IsMousePresent())
 		{
 			EventArgs args;
-			args.SetValue("MouseWheel", Stringf("%d", GET_WHEEL_DELTA_WPARAM(wParam)));
+			args.SetValue("MouseWheel", (int)GET_WHEEL_DELTA_WPARAM(wParam));
 			FireEvent("MouseScroll", args);
 			return 0;
 		}

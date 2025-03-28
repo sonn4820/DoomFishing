@@ -52,7 +52,7 @@ Vec3 Capsule3::GetNearestPoint(Vec3 const point) const
 	Vec3 NearestPointOnBone = GetNearestPointOnLineSegment3D(m_start, m_end, point);
 	Vec3 FromNearestToPoint = (point - NearestPointOnBone);
 
-	float length = Clamp(FromNearestToPoint.GetLength(), 0, m_radius);
+	float length = Clamp(FromNearestToPoint.GetLength(), 0.f, m_radius);
 
 	return NearestPointOnBone + FromNearestToPoint.GetNormalized() * length;
 }

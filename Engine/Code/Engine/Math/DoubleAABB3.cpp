@@ -55,7 +55,7 @@ void DoubleAABB3::GetCornerPoints(DoubleVec3* out_fourCornerWorldPositions) cons
 
 DoubleVec3 DoubleAABB3::GetCenter() const
 {
-	return DoubleVec3((m_mins.x + m_maxs.x) * 0.5f, (m_mins.y + m_maxs.y) * 0.5f, (m_mins.z + m_maxs.z) * 0.5f);
+	return {(m_mins.x + m_maxs.x) * 0.5f, (m_mins.y + m_maxs.y) * 0.5f, (m_mins.z + m_maxs.z) * 0.5f};
 }
 
 DoubleVec2 DoubleAABB3::GetCenterXY() const
@@ -149,7 +149,7 @@ DoubleVec3 DoubleAABB3::GetNearestEdgePosition(DoubleVec3 const& point) const
 
 DoubleVec3 DoubleAABB3::GetDimension() const
 {
-	return DoubleVec3(m_maxs.x - m_mins.x, m_maxs.y - m_mins.y, m_maxs.z - m_mins.z);
+	return {m_maxs.x - m_mins.x, m_maxs.y - m_mins.y, m_maxs.z - m_mins.z};
 }
 
 DoubleVec3 DoubleAABB3::GetHalfDimension() const

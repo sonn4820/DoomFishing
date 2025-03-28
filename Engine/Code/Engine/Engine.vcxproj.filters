@@ -340,8 +340,14 @@
     <ClCompile Include="Math\Plane2.cpp">
       <Filter>Math</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Buffer.cpp">
+    <ClCompile Include="Core\HashedCaseInsensitiveString.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\NamedProperties.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\IntVec4.cpp">
+      <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -675,8 +681,14 @@
     <ClInclude Include="Math\Plane2.hpp">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Buffer.hpp">
+    <ClInclude Include="Core\HashedCaseInsensitiveString.hpp">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\NamedProperties.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\IntVec4.hpp">
+      <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

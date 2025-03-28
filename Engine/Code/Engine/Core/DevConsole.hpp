@@ -6,6 +6,7 @@
 #include "Engine/Core/EventSystem.hpp"
 #include "Engine/Core/Clock.hpp"
 #include "Engine/Core/Timer.hpp"
+#include "Engine/Core/FileUtils.hpp"
 #include <string>
 #include <vector>
 #include <mutex>
@@ -41,6 +42,23 @@ struct DevConsoleLine
 	int m_frameNumber = 0;
 	double m_timestamp = 0.0f;
 };
+
+struct Foo
+{
+	virtual bool Laugh(EventArgs& args) = 0;
+};
+
+struct Faa : public Foo
+{
+	bool Laugh(EventArgs& args) override;
+	int m_ID = 0;
+};
+
+struct Fee : public Foo
+{
+	bool Laugh(EventArgs& args) override;
+};
+
 class DevConsole 
 {
 public:
@@ -53,6 +71,8 @@ public:
 	void Shutdown();
 
 	void Execute(std::string const& consoleCommandText, bool echoCommand = true);
+	void ExecuteXmlCommandScriptNode(XmlElement const& commandScriptXmlElement);
+	void ExecuteXmlCommandScriptFile(std::string& commandScriptXmlFilePathName);
 	void AddLine(Rgba8 const& color, std::string const& text);
 	void Render(AABB2 const& bounds, Renderer* rendererOverride = nullptr) const;
 
@@ -78,6 +98,24 @@ public:
 	static bool Command_SetTimeScale(EventArgs& args);
 	static bool Command_Print(EventArgs& args);
 
+	// SD 4 A2 functions
+	static bool Command_TestBinaryFileLoad(EventArgs& args);
+	static bool Command_TestBinaryFileSave(EventArgs& args);
+
+	// SD 4 A3 Testing function
+	static bool Command_ExecuteXML(EventArgs& args);
+	static bool Command_Test_ExecuteXML(EventArgs& args);
+	static bool Command_TestFunction(EventArgs& args);
+	static bool Command_TestSubFunction(EventArgs& args);
+	static bool Command_TestUnsubFunction(EventArgs& args);
+	static bool Command_TestUnsubMethod(EventArgs& args);
+	bool Test_UnsubMemberMethod(int index);
+
+	std::vector<Foo*> m_test_Foo_List;
+	Faa* m_faa1 = nullptr;
+	Faa* m_faa2 = nullptr;
+	Fee* m_fee = nullptr;
+
 	BitmapFont* m_font = nullptr;
 
 protected:
@@ -99,4 +137,5 @@ protected:
 	int							m_scrollOffset = 0;
 };
 
-	
+void AppendTestFileBufferData(BufferWriter& bufferWriter, EndianMode endianMode);
+void ParseTestFileBufferData(BufferParser& bufferParser, EndianMode endianMode);
